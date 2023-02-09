@@ -172,6 +172,8 @@ copy /Y "$(ProjectDir)\README.md" "$(TargetDir)\NoMovementPenalty\"
 copy /Y "$(ProjectDir)\icon.png" "$(TargetDir)\NoMovementPenalty\"
 copy /Y "$(ProjectDir)\manifest.json" "$(TargetDir)\NoMovementPenalty\"
 copy /Y "$(TargetDir)$(ProjectName).dll" "$(TargetDir)\NoMovementPenalty\NoMovementPenalty\"
-</PostBuildEvent>
+cd "$(TargetDir)\NoMovementPenalty\
+
+tar -a -cf "$(TargetDir)\NoMovementPenalty.zip" "*"</PostBuildEvent>
   </PropertyGroup>
 </Project>

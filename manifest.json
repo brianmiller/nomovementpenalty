@@ -1,8 +1,8 @@
 ﻿{
-  "name": "PhValheimCompanion",
-  "description": "Connects world events to PhValheim's backend (phvalheim-server)",
+  "name": "NoMovementPenalty",
+  "description": "A Valheim mod that disables all movement speed penalties caused by equipment.)",
   "version_number": "1.0.0",
-  "website_url": "https://github.com/brianmiller/phvalheim-companion",
+  "website_url": "https://github.com/brianmiller/nomovementpenalty",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.1901"
   ]
