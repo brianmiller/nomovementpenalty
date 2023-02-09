@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05078777-8B4C-43FD-98EC-887E0F886AAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NoMovementPenalty</RootNamespace>
+    <AssemblyName>NoMovementPenalty</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\0Harmony_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_guiutils_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\assembly_guiutils_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_lux_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\assembly_lux_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_postprocessing_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\assembly_postprocessing_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_simplemeshcombine_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\assembly_simplemeshcombine_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_steamworks_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\assembly_steamworks_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_sunshafts_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\assembly_sunshafts_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_utils_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\assembly_utils_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_valheim_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\assembly_valheim_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\BepInEx_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.AndroidJNIModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.AndroidJNIModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.AnimationModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.AssetBundleModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.AudioModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.ClothModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.CoreModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.DirectorModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.GridModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.IMGUIModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.InputLegacyModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.InputModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.ParticleSystemModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.Physics2DModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.PhysicsModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.ScreenCaptureModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.SharedInternalsModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.SpriteShapeModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.SubsystemsModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.TerrainModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.TextRenderingModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.TilemapModule_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine.UI_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine_publicized">
+      <HintPath>..\brianmiller\PhValheimCompanion\bin\Debug\UnityEngine_publicized.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>rmdir /s /q "$(TargetDir)\NoMovementPenalty"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "$(TargetDir)\NoMovementPenalty"
+mkdir "$(TargetDir)\NoMovementPenalty\NoMovementPenalty"
+copy /Y "$(ProjectDir)\README.md" "$(TargetDir)\NoMovementPenalty\"
+copy /Y "$(ProjectDir)\icon.png" "$(TargetDir)\NoMovementPenalty\"
+copy /Y "$(ProjectDir)\manifest.json" "$(TargetDir)\NoMovementPenalty\"
+copy /Y "$(TargetDir)$(ProjectName).dll" "$(TargetDir)\NoMovementPenalty\NoMovementPenalty\"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>
