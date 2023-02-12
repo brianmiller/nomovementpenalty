@@ -12,7 +12,7 @@ namespace NoMovementPenalty
         public const string MODNAME = "NoMovementPenalty";
         public const string AUTHOR = "posixone";
         public const string GUID = "posixone_NoMovementPenalty";
-        public const string VERSION = "1.0.1";
+        public const string VERSION = "1.0.2";
 
         private void Awake()
         {
@@ -36,119 +36,63 @@ namespace NoMovementPenalty
                 ref ItemDrop.ItemData ___m_helmetItem,
                 ref ItemDrop.ItemData ___m_legItem)
             {
-                try
+                if (___m_rightItem != null)
                 {
-                    if (___m_rightItem.m_shared.m_movementModifier > 0)
+                    if (___m_rightItem.m_shared.m_movementModifier < 0.0f)
                     {
-                        ___m_equipmentMovementModifier += ___m_rightItem.m_shared.m_movementModifier;
-                        return true;
+                        ___m_rightItem.m_shared.m_movementModifier = 0.000000000000000001f;
                     }
-                    else
-                    {
-                        ___m_rightItem.m_shared.m_movementModifier = 0;
-                    }
-                }
-                catch
-                {
                 }
 
-                try
+                if (___m_leftItem != null)
                 {
-                    if (___m_leftItem.m_shared.m_movementModifier > 0)
+                    if (___m_leftItem.m_shared.m_movementModifier < 0.0f)
                     {
-                        ___m_equipmentMovementModifier += ___m_leftItem.m_shared.m_movementModifier;
-                        return true;
+                        ___m_leftItem.m_shared.m_movementModifier = 0.000000000000000001f;
                     }
-                    else
-                    {
-                        ___m_leftItem.m_shared.m_movementModifier = 0;
-                    }
-                }
-                catch
-                {
                 }
 
-                try
+                if (___m_helmetItem != null)
                 {
-                    if (___m_utilityItem.m_shared.m_movementModifier > 0)
+                    if (___m_helmetItem.m_shared.m_movementModifier < 0.0f)
                     {
-                        ___m_equipmentMovementModifier += ___m_utilityItem.m_shared.m_movementModifier;
-                        return true;
+                        ___m_helmetItem.m_shared.m_movementModifier = 0.000000000000000001f;
                     }
-                    else
-                    {
-                        ___m_utilityItem.m_shared.m_movementModifier = 0;
-                    }
-                }
-                catch
-                {
                 }
 
-                try
+                if (___m_shoulderItem != null)
                 {
-                    if (___m_chestItem.m_shared.m_movementModifier > 0)
+                    if (___m_shoulderItem.m_shared.m_movementModifier < 0.0f)
                     {
-                        ___m_equipmentMovementModifier += ___m_chestItem.m_shared.m_movementModifier;
-                        return true;
+                        ___m_shoulderItem.m_shared.m_movementModifier = 0.000000000000000001f;
                     }
-                    else
-                    {
-                        ___m_chestItem.m_shared.m_movementModifier = 0;
-                    }
-                }
-                catch
-                {
                 }
 
-                try
+                if (___m_chestItem != null)
                 {
-                    if (___m_legItem.m_shared.m_movementModifier > 0)
+                    if (___m_chestItem.m_shared.m_movementModifier < 0.0f)
                     {
-                        ___m_equipmentMovementModifier += ___m_legItem.m_shared.m_movementModifier;
-                        return true;
+                        ___m_chestItem.m_shared.m_movementModifier = 0.000000000000000001f;
                     }
-                    else
-                    {
-                        ___m_legItem.m_shared.m_movementModifier = 0;
-                    }
-                }
-                catch
-                {
                 }
 
-                try
+                if (___m_utilityItem != null)
                 {
-                    if (___m_shoulderItem.m_shared.m_movementModifier > 0)
+                    if (___m_utilityItem.m_shared.m_movementModifier < 0.0f)
                     {
-                        ___m_equipmentMovementModifier += ___m_shoulderItem.m_shared.m_movementModifier;
-                        return true;
+                        ___m_utilityItem.m_shared.m_movementModifier = 0.000000000000000001f;
                     }
-                    else
-                    {
-                        ___m_shoulderItem.m_shared.m_movementModifier = 0;
-                    }
-                }
-                catch
-                {
                 }
 
-                try
+                if (___m_legItem != null)
                 {
-                    if (___m_helmetItem.m_shared.m_movementModifier > 0)
+                    if (___m_legItem.m_shared.m_movementModifier < 0.0f)
                     {
-                        ___m_equipmentMovementModifier += ___m_helmetItem.m_shared.m_movementModifier;
-                        return true;
+                        ___m_legItem.m_shared.m_movementModifier = 0.000000000000000001f;
                     }
-                    else
-                    {
-                        ___m_helmetItem.m_shared.m_movementModifier = 0;
-                    }
-                }
-                catch
-                {
                 }
 
-                return true;
+                return true;   
                 
             }
         }
