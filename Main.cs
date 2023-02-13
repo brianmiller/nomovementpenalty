@@ -1,8 +1,8 @@
-﻿using System.Linq.Expressions;
-using System.Reflection;
+﻿using System.Reflection;
 using BepInEx;
 using HarmonyLib;
-using UnityEngine;
+using BepInEx.Configuration;
+
 
 namespace NoMovementPenalty
 {
@@ -12,15 +12,43 @@ namespace NoMovementPenalty
         public const string MODNAME = "NoMovementPenalty";
         public const string AUTHOR = "posixone";
         public const string GUID = "posixone_NoMovementPenalty";
-        public const string VERSION = "1.0.2";
+        public const string VERSION = "1.0.3";
+
+        public static ConfigEntry<bool> modEnable;
+        public static ConfigEntry<bool> rightItemEnable;
+        public static ConfigEntry<bool> leftItemEnable;
+        public static ConfigEntry<bool> helmetItemEnable;
+        public static ConfigEntry<bool> chestItemEnable;
+        public static ConfigEntry<bool> legItemEnable;
+        public static ConfigEntry<bool> shoulderItemEnable;
+        public static ConfigEntry<bool> utilityItemEnable;
 
         private void Awake()
         {
+
+            //global
+            modEnable = Config.Bind(new ConfigDefinition("1-Global", "modEnable"), true, new ConfigDescription("Set this to true to enable and false to disable this mod."));
+
+            //mod toggles
+            rightItemEnable = Config.Bind(new ConfigDefinition("2-Toggles", "rightItemEnable"), true, new ConfigDescription("Set this to true to enable NoMovementPenalty for the equipped right-handed item."));
+            leftItemEnable = Config.Bind(new ConfigDefinition("2-Toggles", "leftItemEnable"), true, new ConfigDescription("Set this to true to enable NoMovementPenalty for the equipped left-handed item."));
+            helmetItemEnable = Config.Bind(new ConfigDefinition("2-Toggles", "helmetItemEnable"), true, new ConfigDescription("Set this to true to enable NoMovementPenalty for the equipped helmet item."));
+            chestItemEnable = Config.Bind(new ConfigDefinition("2-Toggles", "chestItemEnable"), true, new ConfigDescription("Set this to true to enable NoMovementPenalty for the equipped chest item."));
+            legItemEnable = Config.Bind(new ConfigDefinition("2-Toggles", "legItemEnable"), true, new ConfigDescription("Set this to true to enable NoMovementPenalty for the equipped leg item."));
+            shoulderItemEnable = Config.Bind(new ConfigDefinition("2-Toggles", "shoulderItemEnable"), true, new ConfigDescription("Set this to true to enable NoMovementPenalty for the equipped shoulder item."));
+            utilityItemEnable = Config.Bind(new ConfigDefinition("2-Toggles", "utilityItemEnable"), true, new ConfigDescription("Set this to true to enable NoMovementPenalty for the equipped utility item."));
+            
             var harmony = new Harmony(GUID);
             var assembly = Assembly.GetExecutingAssembly();
 
+            //if this mod isn't enabled, don't run
+            if (!modEnable.Value)
+            {
+                return;
+            }
+
             harmony.PatchAll(assembly);
-            Logger.LogMessage($"{AUTHOR}'s {MODNAME} (v{VERSION}) has started");
+
         }
 
         [HarmonyPatch(typeof(Player), "UpdateMovementModifier")]
@@ -30,13 +58,13 @@ namespace NoMovementPenalty
                 (ref float ___m_equipmentMovementModifier,
                 ref ItemDrop.ItemData ___m_rightItem,
                 ref ItemDrop.ItemData ___m_leftItem,
-                ref ItemDrop.ItemData ___m_utilityItem,
-                ref ItemDrop.ItemData ___m_chestItem,
-                ref ItemDrop.ItemData ___m_shoulderItem,
                 ref ItemDrop.ItemData ___m_helmetItem,
-                ref ItemDrop.ItemData ___m_legItem)
+                ref ItemDrop.ItemData ___m_chestItem,                          
+                ref ItemDrop.ItemData ___m_legItem,
+                ref ItemDrop.ItemData ___m_shoulderItem,
+                ref ItemDrop.ItemData ___m_utilityItem)
             {
-                if (___m_rightItem != null)
+                if ((___m_rightItem != null) && (rightItemEnable.Value))
                 {
                     if (___m_rightItem.m_shared.m_movementModifier < 0.0f)
                     {
@@ -44,7 +72,7 @@ namespace NoMovementPenalty
                     }
                 }
 
-                if (___m_leftItem != null)
+                if ((___m_leftItem != null) && (leftItemEnable.Value))
                 {
                     if (___m_leftItem.m_shared.m_movementModifier < 0.0f)
                     {
@@ -52,7 +80,7 @@ namespace NoMovementPenalty
                     }
                 }
 
-                if (___m_helmetItem != null)
+                if ((___m_helmetItem != null) && (helmetItemEnable.Value))
                 {
                     if (___m_helmetItem.m_shared.m_movementModifier < 0.0f)
                     {
@@ -60,15 +88,7 @@ namespace NoMovementPenalty
                     }
                 }
 
-                if (___m_shoulderItem != null)
-                {
-                    if (___m_shoulderItem.m_shared.m_movementModifier < 0.0f)
-                    {
-                        ___m_shoulderItem.m_shared.m_movementModifier = 0.000000000000000001f;
-                    }
-                }
-
-                if (___m_chestItem != null)
+                if ((___m_chestItem != null) && (chestItemEnable.Value))
                 {
                     if (___m_chestItem.m_shared.m_movementModifier < 0.0f)
                     {
@@ -76,19 +96,27 @@ namespace NoMovementPenalty
                     }
                 }
 
-                if (___m_utilityItem != null)
-                {
-                    if (___m_utilityItem.m_shared.m_movementModifier < 0.0f)
-                    {
-                        ___m_utilityItem.m_shared.m_movementModifier = 0.000000000000000001f;
-                    }
-                }
-
-                if (___m_legItem != null)
+                if ((___m_legItem != null) && (legItemEnable.Value))
                 {
                     if (___m_legItem.m_shared.m_movementModifier < 0.0f)
                     {
                         ___m_legItem.m_shared.m_movementModifier = 0.000000000000000001f;
+                    }
+                }
+
+                if ((___m_shoulderItem != null) && (shoulderItemEnable.Value))
+                {
+                    if (___m_shoulderItem.m_shared.m_movementModifier < 0.0f)
+                    {
+                        ___m_shoulderItem.m_shared.m_movementModifier = 0.000000000000000001f;
+                    }
+                }
+
+                if ((___m_utilityItem != null) && (utilityItemEnable.Value))
+                {
+                    if (___m_utilityItem.m_shared.m_movementModifier < 0.0f)
+                    {
+                        ___m_utilityItem.m_shared.m_movementModifier = 0.000000000000000001f;
                     }
                 }
 

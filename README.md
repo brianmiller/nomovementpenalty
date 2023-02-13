@@ -14,8 +14,59 @@ A Valheim mod that disables all movement speed penalties caused by equipment.
 ![withmodwithbuffs](https://user-images.githubusercontent.com/342276/218336498-e0fb61f3-048c-45fb-9cb0-aeb69b5dd7cd.png)
 
 
+##Config toggles (all enabled by default)
+`
+## Settings file was created by plugin NoMovementPenalty v1.0.3
+## Plugin GUID: posixone_NoMovementPenalty
+
+[1-Global]
+
+## Set this to true to enable and false to disable this mod.
+# Setting type: Boolean
+# Default value: true
+modEnable = true
+
+[2-Toggles]
+
+## Set this to true to enable NoMovementPenalty for the equipped right-handed item.
+# Setting type: Boolean
+# Default value: true
+rightItemEnable = true
+
+## Set this to true to enable NoMovementPenalty for the equipped left-handed item.
+# Setting type: Boolean
+# Default value: true
+leftItemEnable = true
+
+## Set this to true to enable NoMovementPenalty for the equipped helmet item.
+# Setting type: Boolean
+# Default value: true
+helmetItemEnable = true
+
+## Set this to true to enable NoMovementPenalty for the equipped chest item.
+# Setting type: Boolean
+# Default value: true
+chestItemEnable = true
+
+## Set this to true to enable NoMovementPenalty for the equipped leg item.
+# Setting type: Boolean
+# Default value: true
+legItemEnable = true
+
+## Set this to true to enable NoMovementPenalty for the equipped shoulder item.
+# Setting type: Boolean
+# Default value: true
+shoulderItemEnable = true
+
+## Set this to true to enable NoMovementPenalty for the equipped utility item.
+# Setting type: Boolean
+# Default value: true
+utilityItemEnable = true
+`
+
 ## Changelog
 
+- 1.0.3 Added a config file to toggle the mod entirely or toggle individual slots for inclusion. E.g., do not apply "NoMovementPenalty" to right-item and/or left-item, etc...
 - 1.0.2 Changed up the evaluations and calculations to display current movement penalties/buffs in the tool-tip.
 - 1.0.1 Considers each equipment item independently allowing for positive integers (speed buffs/enchantments/epic loot/potions, etc...)
 - 1.0.0 Initial release keeps movement penalty at 0.
