@@ -14,8 +14,8 @@ A Valheim mod that disables all movement speed penalties caused by equipment.
 ![withmodwithbuffs](https://user-images.githubusercontent.com/342276/218336498-e0fb61f3-048c-45fb-9cb0-aeb69b5dd7cd.png)
 
 
-##Config toggles (all enabled by default)
-`
+## Config toggles (all enabled by default)
+```
 ## Settings file was created by plugin NoMovementPenalty v1.0.3
 ## Plugin GUID: posixone_NoMovementPenalty
 
@@ -62,7 +62,7 @@ shoulderItemEnable = true
 # Setting type: Boolean
 # Default value: true
 utilityItemEnable = true
-`
+```
 
 ## Changelog
 
