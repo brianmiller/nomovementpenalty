@@ -12,7 +12,7 @@ namespace NoMovementPenalty
         public const string MODNAME = "NoMovementPenalty";
         public const string AUTHOR = "posixone";
         public const string GUID = "posixone_NoMovementPenalty";
-        public const string VERSION = "1.0.3";
+        public const string VERSION = "1.0.4";
 
         public static ConfigEntry<bool> modEnable;
         public static ConfigEntry<bool> rightItemEnable;
@@ -51,11 +51,11 @@ namespace NoMovementPenalty
 
         }
 
-        [HarmonyPatch(typeof(Player), "UpdateMovementModifier")]
+        [HarmonyPatch(typeof(Player), "UpdateModifiers")]
         public class EquippedArmorDoesntAffectMovementSpeedMod
         {
             public static bool Prefix
-                (ref float ___m_equipmentMovementModifier,
+                (ref float ___m_equipmentModifierValues,
                 ref ItemDrop.ItemData ___m_rightItem,
                 ref ItemDrop.ItemData ___m_leftItem,
                 ref ItemDrop.ItemData ___m_helmetItem,
