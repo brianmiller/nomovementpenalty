@@ -16,7 +16,7 @@ A Valheim mod that disables all movement speed penalties caused by equipment.
 
 ## Config toggles (all enabled by default)
 ```
-## Settings file was created by plugin NoMovementPenalty v1.0.3
+## Settings file was created by plugin NoMovementPenalty v1.0.4
 ## Plugin GUID: posixone_NoMovementPenalty
 
 [1-Global]
@@ -66,6 +66,7 @@ utilityItemEnable = true
 
 ## Changelog
 
+- 1.0.4 Updated to support Ashlands release. Note: this version will not work on versions prior to 0.218.9. 
 - 1.0.3 Added a config file to toggle the mod entirely or toggle individual slots for inclusion. E.g., do not apply "NoMovementPenalty" to right-item and/or left-item, etc...
 - 1.0.2 Changed up the evaluations and calculations to display current movement penalties/buffs in the tool-tip.
 - 1.0.1 Considers each equipment item independently allowing for positive integers (speed buffs/enchantments/epic loot/potions, etc...)
