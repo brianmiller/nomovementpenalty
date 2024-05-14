@@ -1,9 +1,9 @@
 ﻿{
   "name": "NoMovementPenalty",
   "description": "A Valheim mod that disables all movement speed penalties caused by equipment.",
-  "version_number": "1.0.3",
+  "version_number": "1.0.4",
   "website_url": "https://github.com/brianmiller/nomovementpenalty",
   "dependencies": [
-    "denikson-BepInExPack_Valheim-5.4.1901"
+    "denikson-BepInExPack_Valheim-5.4.2202"
   ]
 }
